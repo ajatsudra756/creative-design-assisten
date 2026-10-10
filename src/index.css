@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(1200px 600px at 15% -10%, rgba(124, 92, 255, 0.18), transparent 60%),
+    radial-gradient(1000px 500px at 110% 10%, rgba(45, 212, 191, 0.12), transparent 55%),
+    #0b0d12;
+  color: #e8eaf0;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Custom scrollbar */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #242a36;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #333a49;
+  background-clip: padding-box;
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-white/5 bg-ink-800/70 backdrop-blur-sm shadow-card;
+  }
+  .label {
+    @apply block text-sm font-medium text-slate-300 mb-1.5;
+  }
+  .field {
+    @apply w-full rounded-xl border border-white/10 bg-ink-900/60 px-3.5 py-2.5 text-sm text-slate-100
+      placeholder:text-slate-500 outline-none transition
+      focus:border-accent/60 focus:ring-2 focus:ring-accent/30;
+  }
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-white
+      transition hover:bg-accent-soft active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 shadow-glow;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-medium text-slate-200
+      transition hover:bg-white/10 active:scale-[0.98];
+  }
+  .section-title {
+    @apply font-display text-base font-semibold text-white;
+  }
+}
